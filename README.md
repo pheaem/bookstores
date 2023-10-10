@@ -1,5 +1,4 @@
-# bookstores
-# GoCardless sample application
+# Bookstores
 
 ## Setup
 
