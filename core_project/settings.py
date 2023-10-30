@@ -85,9 +85,9 @@ DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "bookstores",
-        "USER": "postgres",
-        "PASSWORD": "Mikewski168",
-        "HOST": "127.0.0.1",
+        "USER": "fl0user",
+        "PASSWORD": "uIhM8kfX9wgr",
+        "HOST": "ep-billowing-cloud-98186199.ap-southeast-1.aws.neon.fl0.io",
         "PORT": "5432",
     }
 }
