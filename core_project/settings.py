@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     # third party apps
     'rest_framework',
     'corsheaders',
+    'django_filters',
     # local apps
     'books.apps.BooksConfig',
     'apis.apps.ApisConfig',
     'sales.apps.SalesConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -77,6 +79,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core_project.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -144,3 +149,4 @@ CORS_ALLOWED_ORIGINS = (
 )
 
 CRSF_TRUSTED_ORIGINS = ["localhost:3000"]
+APPEND_SLASH=False

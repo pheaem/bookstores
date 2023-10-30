@@ -6,7 +6,8 @@ from sales.models import *
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Books
-        fields = ('title', 'author', 'publisher', 'category', 'language', 'quantity', 'description', 'published_date', 'sale_price', 'discount', 'status', 'cover')
+        fields = '__all__'
+        # fields = ('title', 'author', 'publisher', 'category', 'language', 'quantity', 'description', 'published_date', 'sale_price', 'discount', 'status', 'cover')
 
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -33,6 +34,5 @@ class CustomerSerializer(serializers.ModelSerializer):
         model = Customer
         fields = ('customer_name', 'customer_phone', 'customer_address')
     
-    # def create(self, validated_data):
-    #     customer_data = Customer.objects.create(**validated_data)
-    #     return customer_data
+    def create(self, validated_data):
+        return Customer.objects.create(**validated_data)
