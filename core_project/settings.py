@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2e16d)t#=hghp5v1rbw9*&77ctgmu9p83ijk0k1*nw)lwwk%jf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -90,9 +90,9 @@ DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "bookstores",
-        "USER": "fl0user",
-        "PASSWORD": "uIhM8kfX9wgr",
-        "HOST": "ep-billowing-cloud-98186199.ap-southeast-1.aws.neon.fl0.io",
+        "USER": "postgres",
+        "PASSWORD": "Mikewski168",
+        "HOST": "localhost",
         "PORT": "5432",
     }
 }
