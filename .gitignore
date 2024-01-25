@@ -1,3 +1,7 @@
-.venv
-node
+.venv/
+node/
 db.sqlite3
+static/
+__pycache__/
+.env
+.DS_Store
