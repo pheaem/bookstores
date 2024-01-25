@@ -160,3 +160,6 @@ CORS_ALLOWED_ORIGINS = (
 
 CRSF_TRUSTED_ORIGINS = ["https://*.fl0.io"]
 APPEND_SLASH=False
+POSTGRES_LOCALLY = False
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
+    DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
