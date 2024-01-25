@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from environ import Env
+env = Env()
+Env.read_env()
+ENVIRONMENT = env('ENVIRONMENT', default='production')
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2e16d)t#=hghp5v1rbw9*&77ctgmu9p83ijk0k1*nw)lwwk%jf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -38,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third party apps
+    'django-honeypot'
     'rest_framework',
     'corsheaders',
     'django_filters',
@@ -98,6 +107,7 @@ DATABASES = {
 }
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -148,5 +158,5 @@ CORS_ALLOWED_ORIGINS = (
     "http://localhost:8000",
 )
 
-CRSF_TRUSTED_ORIGINS = ["localhost:3000"]
+CRSF_TRUSTED_ORIGINS = ["https://*.fl0.io"]
 APPEND_SLASH=False

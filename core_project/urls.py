@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('admin-panel/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include('apis.urls')),
     path('', include('books.urls')),
